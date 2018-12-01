@@ -95,16 +95,16 @@ bindsym $mod+a focus parent
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
-set $ws1 "1"
-set $ws2 "2"
-set $ws3 "3"
+set $ws1 "1 "
+set $ws2 "2 "
+set $ws3 "3 "
 set $ws4 "4"
 set $ws5 "5"
 set $ws6 "6"
 set $ws7 "7"
 set $ws8 "8"
-set $ws9 "9"
-set $ws10 "10"
+set $ws9 "9 🎵"
+set $ws10 "10 "
 
 # switch to workspace
 bindsym $mod+1 workspace $ws1
@@ -140,6 +140,8 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 ##custom settings
 bindsym $mod+Shift+f	exec firefox
 bindsym $mod+F5		exec toggletouchpad.sh
+bindsym $mod+F1		exec ibus emoji
+
 bindsym $mod+F2		exec --no-startup-id xbacklight -5
 bindsym $mod+F3		exec --no-startup-id xbacklight +5
 bindsym $mod+F10	exec --no-startup-id pactl set-sink-volume 0 +5%
