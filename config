@@ -31,7 +31,7 @@ font pango:monospace 8
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+Return exec gnome-terminal
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -41,7 +41,7 @@ bindsym $mod+d exec dmenu_run
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
-# bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
+bindsym $mod+Shift+d exec --no-startup-id i3-dmenu-desktop
 
 # change focus
 bindsym $mod+j focus left
@@ -139,15 +139,17 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 
 ##custom settings
 bindsym $mod+Shift+f	exec firefox
+bindsym $mod+F4		exec gnome-screenshot -i
 bindsym $mod+F5		exec toggletouchpad.sh
 bindsym $mod+F1		exec ibus emoji
 
 bindsym $mod+F2		exec --no-startup-id xbacklight -5
 bindsym $mod+F3		exec --no-startup-id xbacklight +5
-bindsym $mod+F10	exec --no-startup-id pactl set-sink-volume 0 +5%
-bindsym $mod+F9		exec --no-startup-id pactl set-sink-volume 0 -5%
-bindsym $mod+F11	exec --no-startup-id pactl set-sink-mute   0 toggle
+bindsym $mod+F11	exec --no-startup-id pactl set-sink-volume 0 +5%
+bindsym $mod+F10	exec --no-startup-id pactl set-sink-volume 0 -5%
+bindsym $mod+F12	exec --no-startup-id pactl set-sink-mute   0 toggle
 
+bindsym $mod+shift+n exec nautilus
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
