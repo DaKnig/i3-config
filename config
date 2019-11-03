@@ -145,11 +145,17 @@ bindsym $mod+F1		exec ibus emoji
 
 bindsym $mod+F2		exec --no-startup-id xbacklight -5
 bindsym $mod+F3		exec --no-startup-id xbacklight +5
-bindsym $mod+F11	exec --no-startup-id pactl set-sink-volume 0 +5%
-bindsym $mod+F10	exec --no-startup-id pactl set-sink-volume 0 -5%
-bindsym $mod+F12	exec --no-startup-id pactl set-sink-mute   0 toggle
+bindsym $mod+F11	exec --no-startup-id pactl set-sink-volume 1 +5%
+bindsym $mod+F10	exec --no-startup-id pactl set-sink-volume 1 -5%
+bindsym $mod+F12	exec --no-startup-id pactl set-sink-mute   1 toggle
 
 bindsym $mod+shift+n exec nautilus
+
+# Make the currently focused window a scratchpad
+bindsym $mod+Shift+minus move scratchpad
+
+# Show the first scratchpad window
+bindsym $mod+minus scratchpad show
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
