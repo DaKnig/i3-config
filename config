@@ -150,9 +150,9 @@ bindsym $mod+F11	exec --no-startup-id pactl set-sink-volume 0 +5%
 bindsym $mod+F10	exec --no-startup-id pactl set-sink-volume 0 -5%
 bindsym $mod+F12	exec --no-startup-id pactl set-sink-mute   0 toggle
 
-bindsym $mod+shift+F11	exec --no-startup-id pactl set-sink-volume $(pactl list short sinks| egrep "^[1-9]+" -o) +5%
-bindsym $mod+shift+F10	exec --no-startup-id pactl set-sink-volume $(pactl list short sinks| egrep "^[1-9]+" -o) -5%
-bindsym $mod+shift+F12	exec --no-startup-id pactl set-sink-mute   $(pactl list short sinks| egrep "^[1-9]+" -o) toggle
+bindsym $mod+shift+F11	exec --no-startup-id pactl set-sink-volume $(pactl list short sinks| egrep "^[^0][^	]*" -o) +5%
+bindsym $mod+shift+F10	exec --no-startup-id pactl set-sink-volume $(pactl list short sinks| egrep "^[^0][^	]*" -o) -5%
+bindsym $mod+shift+F12	exec --no-startup-id pactl set-sink-mute   $(pactl list short sinks| egrep "^[^0][^	]*" -o) toggle
 
 bindsym $mod+shift+n exec nautilus
 
