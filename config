@@ -138,6 +138,7 @@ bindsym $mod+Shift+r restart
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
 ##custom settings
+
 bindsym $mod+Shift+f	exec firefox
 bindsym $mod+F4		exec gnome-screenshot -i
 bindsym $mod+F5		exec toggletouchpad.sh
@@ -145,11 +146,17 @@ bindsym $mod+F1		exec ibus emoji
 
 bindsym $mod+F2		exec --no-startup-id xbacklight -5
 bindsym $mod+F3		exec --no-startup-id xbacklight +5
-bindsym $mod+F11	exec --no-startup-id pactl set-sink-volume 1 +5%
-bindsym $mod+F10	exec --no-startup-id pactl set-sink-volume 1 -5%
-bindsym $mod+F12	exec --no-startup-id pactl set-sink-mute   1 toggle
+bindsym $mod+F11	exec --no-startup-id pactl set-sink-volume 0 +5%
+bindsym $mod+F10	exec --no-startup-id pactl set-sink-volume 0 -5%
+bindsym $mod+F12	exec --no-startup-id pactl set-sink-mute   0 toggle
+
+bindsym $mod+shift+F11	exec --no-startup-id pactl set-sink-volume $(pactl list short sinks| egrep "^[1-9]+" -o) +5%
+bindsym $mod+shift+F10	exec --no-startup-id pactl set-sink-volume $(pactl list short sinks| egrep "^[1-9]+" -o) -5%
+bindsym $mod+shift+F12	exec --no-startup-id pactl set-sink-mute   $(pactl list short sinks| egrep "^[1-9]+" -o) toggle
 
 bindsym $mod+shift+n exec nautilus
+
+exec_always /home/dudeguy/scripts/swap_home_end.sh
 
 # Make the currently focused window a scratchpad
 bindsym $mod+Shift+minus move scratchpad
